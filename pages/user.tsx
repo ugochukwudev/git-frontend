@@ -110,7 +110,7 @@ const User = () => {
                       className="border-[1px] border-gray-300 px-6 py-2 rounded-full cursor-pointer"
                     >
                       <p>{item.name}</p>
-                      <Popup language={item.language} />
+                      {show && <Popup language={item.language} />}
                     </div>
                   );
               })}
