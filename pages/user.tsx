@@ -5,6 +5,7 @@ const User = () => {
   const [user, setuser] = useState({} as any);
   const [repository, setRepository] = useState({} as any);
   const [showPopup, setShowPopup] = useState(false);
+
   const fetchToken = async () => {
     const response = await fetch(
       "https://git-backend-production.up.railway.app/callback",
@@ -94,28 +95,22 @@ const User = () => {
             </p>
             {repository?.length > 0 &&
               repository?.map((item: any) => {
+                let show = false;
                 if (!item.private)
                   return (
                     <div
                       onClick={() => {
+                        alert(item.language);
                         console.log(item.language);
-                        setShowPopup(true);
+                        show = true;
                         setTimeout(() => {
-                          setShowPopup(false);
+                          show = false;
                         }, 3000);
                       }}
                       className="border-[1px] border-gray-300 px-6 py-2 rounded-full cursor-pointer"
                     >
                       <p>{item.name}</p>
-
-                      <div className="absolute top-10 p-4 z-10 bg-blue-500 text-white w-3/12 rounded-xl border-2 left-[40%] ">
-                        <p className="font-bold">Languages:</p>
-                        <p>{item.language}</p>
-                        <p className="font-bold">Follower Url:</p>
-                        <p>{item.description}</p>
-                        <p>Description:</p>
-                        <p>{item.description}</p>
-                      </div>
+                      <Popup language={item.language} />
                     </div>
                   );
               })}
