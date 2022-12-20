@@ -100,7 +100,8 @@ const User = () => {
                   return (
                     <div
                       onClick={() => {
-                        alert(item.language);
+                        var text: any = `language : ${text.language} \n description : ${text.description}`;
+                        alert(text);
                         console.log(item.language);
                         show = true;
                         setTimeout(() => {
