@@ -107,25 +107,15 @@ const User = () => {
                       className="border-[1px] border-gray-300 px-6 py-2 rounded-full cursor-pointer"
                     >
                       <p>{item.name}</p>
-                      {showPopup && (
-                        <div className="absolute top-10 p-4 z-10 bg-blue-500 text-white w-3/12 rounded-xl border-2 left-[40%] ">
-                          <p className="font-bold">Languages:</p>
-                          <p>{item.language}</p>
-                          <p className="font-bold">Follower Url:</p>
-                          <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Modi, sed.
-                          </p>
-                          <p>Description:</p>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Magnam maxime distinctio, eos laborum tenetur
-                            atque? Ratione perspiciatis ipsa facilis beatae!
-                            Provident quo dolores, itaque ab porro in distinctio
-                            officiis necessitatibus!
-                          </p>
-                        </div>
-                      )}
+
+                      <div className="absolute top-10 p-4 z-10 bg-blue-500 text-white w-3/12 rounded-xl border-2 left-[40%] ">
+                        <p className="font-bold">Languages:</p>
+                        <p>{item.language}</p>
+                        <p className="font-bold">Follower Url:</p>
+                        <p>{item.description}</p>
+                        <p>Description:</p>
+                        <p>{item.description}</p>
+                      </div>
                     </div>
                   );
               })}
