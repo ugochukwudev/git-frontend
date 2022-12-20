@@ -100,7 +100,7 @@ const User = () => {
                   return (
                     <div
                       onClick={() => {
-                        var text: any = `language : ${text.language} \n description : ${text.description}`;
+                        var text: any = `language : ${item.language} \n description : ${item.description}`;
                         alert(text);
                         console.log(item.language);
                         show = true;
